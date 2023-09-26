@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Tumor Detector</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/style.css') }}" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="static/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    
+    <body>
+        <div class ="header">
+            <h1>Brain Tumor Detection Website</h1>
+        </div>
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+          
+    
+        <div class ="originalimage">
+          <img src = "{{ url_for('static', filename=source) }}" height="500" width="500">
+          <figcaption>Original Image</figcaption>
+          <br>
+          <br>
+          <p>{{res}}</p>
+          <br>
+            <p> The probability of the image being Tumorous is: {{result}}%</p>
+            <br>
+            <hr>
+            <p>Image after gray scaling and blurring</p>
+            <img src = "{{ url_for('static', filename='assets/images/gray.jpg') }}" height="500" width="500">
+            <br>
+            <br>
+            <hr>
+
+            <p>Image after Thresholding and performing series of erosions and dilations</p>
+            <img src = "{{ url_for('static', filename='assets/images/thresh.jpg') }}" height="500" width="500">
+            <br>
+            <br>
+            <hr>
+
+            <p>Image after Cropping</p>
+            <img src = "{{ url_for('static', filename='assets/images/after_contour.jpg') }}" height="500" width="500">
+            <br>
+            <br>
+            <hr>
+          
+         
+        </div>
+        </div> 
+        
+
+    </body>
+    </html>

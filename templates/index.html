@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Tumor Detector</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="static/assets/css/style.css" rel="stylesheet">
+  <script type = "text/javascript" src = "static/assets/js/main.js"></script>  
+</head>
+<body>
+    <div class ="header">
+        <h1>Brain Tumor Detection Website</h1>
+    </div>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <form action="{{ url_for('home')}}" method="post" enctype=multipart/form-data>
+     <div class="file-upload">
+      <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name=file  required>
+      <div class="file-upload-content">
+        <img class="file-upload-image" src="#" alt="your image" />
+        <div class="image-title-wrap">
+          <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+        </div>
+      </div>
+      <button type="submit" class="predictbtn">Predict</button> 
+    </div>
+  </form> 
+  {{result}}
+</body>
+
+</html>
